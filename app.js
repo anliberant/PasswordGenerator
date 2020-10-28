@@ -76,20 +76,18 @@ let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
         '=',
         '`',
     ];
-document.querySelector('#pass-length').oninput = function () {
+document.querySelector('#pass-length').addEventListener('input', function () {
     document.querySelector('#password-length').innerHTML = this.value;
-};
-document.querySelector('#pass-number').oninput = function () {
+});
+document.querySelector('#pass-number').addEventListener('input', function () {
     document.querySelector('#passwords-number').innerHTML = this.value;
-};
+});
 document
     .querySelector('#generator')
     .addEventListener('click', generatePassword);
-
 document.querySelector('#clear').addEventListener('click', () => {
     document.querySelector('#out').innerHTML = '';
 });
-
 function generatePassword(e) {
     let tmpArr = [];
     if (document.querySelector('#include_numbers').checked) {
@@ -110,18 +108,6 @@ function generatePassword(e) {
     let numberOfPassword = parseInt(
         document.querySelector('#pass-number').value,
     );
-    console.log(numberOfPassword);
-    // for (let i = 0; i < numberOfPassword; i++) {
-    //     for (let j = 0; j < passLength; j++) {
-    //         out += tmpArr[randomNumber(0, tmpArr.length - 1)];
-    //         if (out.includes('undefined')) {
-    //             j--;
-    //             out = tmpArr.filter((el) => el != null);
-    //             break;
-    //         }
-    //     }
-    //     document.querySelector('#out').innerHTML += `<p>${out}</p>`;
-    // }
     while (numberOfPassword > 0) {
         let out = '';
         for (let j = 0; j < passLength; j++) {
