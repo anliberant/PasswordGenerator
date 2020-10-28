@@ -106,12 +106,24 @@ function generatePassword(e) {
     }
     tmpArr.sort(compareRandom);
     let passLength = parseInt(document.querySelector('#pass-length').value);
-    let out = '';
+
     let numberOfPassword = parseInt(
         document.querySelector('#pass-number').value,
     );
     console.log(numberOfPassword);
-    for (let i = 0; i < numberOfPassword; i++) {
+    // for (let i = 0; i < numberOfPassword; i++) {
+    //     for (let j = 0; j < passLength; j++) {
+    //         out += tmpArr[randomNumber(0, tmpArr.length - 1)];
+    //         if (out.includes('undefined')) {
+    //             j--;
+    //             out = tmpArr.filter((el) => el != null);
+    //             break;
+    //         }
+    //     }
+    //     document.querySelector('#out').innerHTML += `<p>${out}</p>`;
+    // }
+    while (numberOfPassword > 0) {
+        let out = '';
         for (let j = 0; j < passLength; j++) {
             out += tmpArr[randomNumber(0, tmpArr.length - 1)];
             if (out.includes('undefined')) {
@@ -121,6 +133,7 @@ function generatePassword(e) {
             }
         }
         document.querySelector('#out').innerHTML += `<p>${out}</p>`;
+        numberOfPassword--;
     }
 }
 function compareRandom(a, b) {
