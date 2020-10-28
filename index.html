@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Password Generator</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">JavaScript Password Generator</h1>
+                <p class="lead">To prevent your passwords from being hacked by social engineering, brute force or
+                    dictionary attack method, and keep your online accounts safe...</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form>
+                    <div class="form-group">
+                        <label for="pass-length">Password Length: (<span id="password-length">10</span>)</label>
+                        <input type="range" class="form-control" id="pass-length" value="10" max="50">
+                        <small class="form-text text-muted">Make sure your passwords are at least 12
+                            characters long and contain letters, numbers, and special characters. Some people prefer to
+                            generate passwords which are 14 or 20 characters in length.</small>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="include_numbers" checked>
+                        <label class="custom-control-label" for="include_numbers">Include Numbers</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="include_symbols" checked>
+                        <label class="custom-control-label" for="include_symbols">Include Symbols</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="lowercase_characters" checked>
+                        <label class="custom-control-label" for="lowercase_characters">Include Lowercase
+                            Characters</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="uppercase_characters" checked>
+                        <label class="custom-control-label" for="uppercase_characters">Include Uppercase
+                            Characters</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass-number">Number of Passwords: (<span id="passwords-number">1</span>)</label>
+                        <input type="number" class="form-control" value="1" min="0" max="1000" step="1" />
+                        <input type="range" class="form-control" id="pass-number" value="1" max="50">
+                        <small class="form-text text-muted">Generate up to 50 passwords at time</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="generator">Generate Password</button>
+                    <button type="button" class="btn btn-primary" id="clear">Clear Output</button>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="out">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
